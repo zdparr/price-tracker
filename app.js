@@ -3,8 +3,8 @@ const TROY_OZ_TO_G = 31.1034768;
 // IMPORTANT: Replace these URLs with the actual endpoints you pick.
 // Tip: choose a provider that supports browser CORS (gold-api.com says it does). :contentReference[oaicite:2]{index=2}
 const PRICE_ENDPOINTS = {
-  gold:  "https://gold-api.com/api/XAU/USD",
-  silver:"https://gold-api.com/api/XAG/USD"
+  gold:  "https://api.gold-api.com/price/XAU",
+  silver:"https://api.gold-api.com/price/XAG"
 };
 
 let coins = [];
