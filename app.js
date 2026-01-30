@@ -57,8 +57,8 @@ function render() {
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${c.name}</td>
-      <td class="num">${num(c.fine_grams, 3)}</td>
-      <td class="num">${money(melt, currency)}</td>
+      <td class="text-end">${num(c.fine_grams, 3)}</td>
+      <td class="text-end">${money(melt, currency)}</td>
     `;
     return tr;
   };
