@@ -1,0 +1,10 @@
+body { font-family: system-ui, Arial, sans-serif; margin: 24px; }
+header { display: grid; gap: 12px; margin-bottom: 16px; }
+.prices { display: grid; gap: 6px; }
+.controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border-bottom: 1px solid #e5e5e5; padding: 10px 8px; }
+th { text-align: left; }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+.muted { color: #666; font-size: 0.9em; }
+button { padding: 8px 12px; cursor: pointer; }

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "US Silver Dime (pre-1965, 90%)",
+    "metal": "silver",
+    "fine_grams": 2.25
+  },
+  {
+    "name": "US Silver Quarter (pre-1965, 90%)",
+    "metal": "silver",
+    "fine_grams": 5.625
+  },
+  {
+    "name": "US Silver Half Dollar (pre-1965, 90%)",
+    "metal": "silver",
+    "fine_grams": 11.25
+  },
+  {
+    "name": "US Silver Dollar (pre-1965, 90%)",
+    "metal": "silver",
+    "fine_grams": 31.1034768
+  },
+  {
+    "name": "1 oz Silver Round (.999)",
+    "metal": "silver",
+    "fine_grams": 31.1034768
+  },
+  {
+    "name": "1 oz Gold Coin (.999)",
+    "metal": "gold",
+    "fine_grams": 31.1034768
+  },
+  {
+    "name": "1/10 oz Gold Coin (.999)",
+    "metal": "gold",
+    "fine_grams": 3.11034768
+  }
+]
