@@ -1,53 +1,79 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gold & Silver Melt Calculator</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header>
+<header class="topbar">
+  <div>
     <h1>Gold & Silver Tracker</h1>
-    <div class="prices">
-      <div>Gold: <span id="goldSpot">—</span> / ozt (<span id="goldGram">—</span> / g)</div>
-      <div>Silver: <span id="silverSpot">—</span> / ozt (<span id="silverGram">—</span> / g)</div>
-      <div class="muted">Last updated: <span id="lastUpdated">—</span></div>
+    <div class="muted">Last updated: <span id="lastUpdated">—</span></div>
+  </div>
+
+  <div class="toolbar">
+    <button id="refreshBtn">Refresh</button>
+
+    <label class="field">
+      <span>Currency</span>
+      <select id="currency">
+        <option value="USD" selected>USD</option>
+      </select>
+    </label>
+  </div>
+</header>
+
+<main class="grid">
+  <!-- SILVER -->
+  <section class="card">
+    <div class="card-header">
+      <div>
+        <h2>Silver</h2>
+        <div class="price-line">
+          <span class="label">Spot:</span>
+          <span id="silverSpot">—</span>
+          <span class="muted">/ ozt</span>
+          <span class="dot">•</span>
+          <span id="silverGram">—</span>
+          <span class="muted">/ g</span>
+        </div>
+      </div>
     </div>
 
-    <div class="controls">
-      <button id="refreshBtn">Refresh</button>
-      <label>
-        Currency:
-        <select id="currency">
-          <option value="USD" selected>USD</option>
-        </select>
-      </label>
-      <label>
-        Filter:
-        <select id="filterMetal">
-          <option value="all" selected>All</option>
-          <option value="gold">Gold</option>
-          <option value="silver">Silver</option>
-        </select>
-      </label>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th class="num">Fine grams</th>
+            <th class="num">Melt value</th>
+          </tr>
+        </thead>
+        <tbody id="silverBody"></tbody>
+      </table>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <table>
-      <thead>
-        <tr>
-          <th>Item</th>
-          <th>Metal</th>
-          <th class="num">Fine grams</th>
-          <th class="num">Melt value</th>
-        </tr>
-      </thead>
-      <tbody id="coinsBody"></tbody>
-    </table>
-  </main>
+  <!-- GOLD -->
+  <section class="card">
+    <div class="card-header">
+      <div>
+        <h2>Gold</h2>
+        <div class="price-line">
+          <span class="label">Spot:</span>
+          <span id="goldSpot">—</span>
+          <span class="muted">/ ozt</span>
+          <span class="dot">•</span>
+          <span id="goldGram">—</span>
+          <span class="muted">/ g</span>
+        </div>
+      </div>
+    </div>
 
-  <script src="app.js"></script>
-</body>
-</html>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th class="num">Fine grams</th>
+            <th class="num">Melt value</th>
+          </tr>
+        </thead>
+        <tbody id="goldBody"></tbody>
+      </table>
+    </div>
+  </section>
+</main>

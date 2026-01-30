@@ -44,27 +44,32 @@ async function loadCoins() {
 
 function render() {
   const currency = document.querySelector("#currency").value;
-  const filter = document.querySelector("#filterMetal").value;
-  const body = document.querySelector("#coinsBody");
-  body.innerHTML = "";
 
-  const rows = coins
-    .filter(c => filter === "all" ? true : c.metal === filter)
-    .map(c => {
-      const perGram = spot[c.metal]?.perGram;
-      const melt = (typeof perGram === "number") ? (c.fine_grams * perGram) : null;
+  const silverBody = document.querySelector("#silverBody");
+  const goldBody = document.querySelector("#goldBody");
+  silverBody.innerHTML = "";
+  goldBody.innerHTML = "";
 
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
-        <td>${c.name}</td>
-        <td>${c.metal}</td>
-        <td class="num">${num(c.fine_grams, 3)}</td>
-        <td class="num">${money(melt, currency)}</td>
-      `;
-      return tr;
-    });
+  const makeRow = (c) => {
+    const perGram = spot[c.metal]?.perGram;
+    const melt = (typeof perGram === "number") ? (c.fine_grams * perGram) : null;
 
-  rows.forEach(r => body.appendChild(r));
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${c.name}</td>
+      <td class="num">${num(c.fine_grams, 3)}</td>
+      <td class="num">${money(melt, currency)}</td>
+    `;
+    return tr;
+  };
+
+  coins
+    .filter(c => c.metal === "silver")
+    .forEach(c => silverBody.appendChild(makeRow(c)));
+
+  coins
+    .filter(c => c.metal === "gold")
+    .forEach(c => goldBody.appendChild(makeRow(c)));
 
   document.querySelector("#goldSpot").textContent   = money(spot.gold.perOzt, currency);
   document.querySelector("#goldGram").textContent   = money(spot.gold.perGram, currency);
@@ -93,7 +98,7 @@ async function main() {
     refreshPrices().catch(err => alert(err.message));
   });
 
-  document.querySelector("#filterMetal").addEventListener("change", render);
+    document.querySelector("#currency").addEventListener("change", render);
 
   // Initial load
   await refreshPrices();
