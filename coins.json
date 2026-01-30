@@ -20,18 +20,38 @@
     "fine_grams": 24.057
   },
   {
-    "name": "1 oz Silver Round (.999)",
+    "name": "1/10 oz Silver Round (.999)",
     "metal": "silver",
-    "fine_grams": 31.1034768
+    "fine_grams": 3.11034768
   },
   {
-    "name": "1 oz Gold Coin (.999)",
-    "metal": "gold",
+    "name": "1/4 oz Silver Round (.999)",
+    "metal": "silver",
+    "fine_grams": 7.7758692
+  },
+  {
+    "name": "1/2 oz Silver Round (.999)",
+    "metal": "silver",
+    "fine_grams": 15.5517384
+  },
+  {
+    "name": "1 oz Silver Round (.999)",
+    "metal": "silver",
     "fine_grams": 31.1034768
   },
   {
     "name": "1/10 oz Gold Coin (.999)",
     "metal": "gold",
     "fine_grams": 3.11034768
+  },
+  {
+    "name": "1/4 oz Gold Coin (.999)",
+    "metal": "gold",
+    "fine_grams": 7.7758692
+  },
+  {
+    "name": "1 oz Gold Coin (.999)",
+    "metal": "gold",
+    "fine_grams": 31.1034768
   }
 ]
