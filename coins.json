@@ -39,6 +39,36 @@
     "metal": "silver",
     "fine_grams": 31.1034768
   },
+    {
+    "name": "1/2 Goldback (1/2000 oz)",
+    "metal": "gold",
+    "fine_grams": 0.0155517384
+  },
+  {
+    "name": "1 Goldback (1/1000 oz)",
+    "metal": "gold",
+    "fine_grams": 0.0311034768
+  },
+  {
+    "name": "5 Goldback (1/200 oz)",
+    "metal": "gold",
+    "fine_grams": 0.155517384
+  },
+  {
+    "name": "10 Goldback (1/100 oz)",
+    "metal": "gold",
+    "fine_grams": 0.311034768
+  },
+  {
+    "name": "25 Goldback (1/40 oz)",
+    "metal": "gold",
+    "fine_grams": 0.77758692
+  },
+  {
+    "name": "50 Goldback (1/20 oz)",
+    "metal": "gold",
+    "fine_grams": 1.55517384
+  },
   {
     "name": "1/10 oz Gold Coin (.999)",
     "metal": "gold",
