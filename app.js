@@ -1,7 +1,7 @@
 const TROY_OZ_TO_G = 31.1034768;
 
 // IMPORTANT: Replace these URLs with the actual endpoints you pick.
-// Tip: choose a provider that supports browser CORS (gold-api.com says it does). :contentReference[oaicite:2]{index=2}
+// Tip: choose a provider that supports browser CORS (gold-api.com says it does).
 const PRICE_ENDPOINTS = {
   gold:  "https://api.gold-api.com/price/XAU",
   silver:"https://api.gold-api.com/price/XAG"
@@ -25,18 +25,16 @@ function num(n, decimals = 3) {
 
 // Provider responses differ. Adjust parsing here based on the API you choose.
 async function fetchSpot(url) {
+  console.log("Fetching spot:", url);
   const res = await fetch(url, { cache: "no-store" });
-  if (!res.ok) throw new Error(`Price fetch failed: ${res.status}`);
+  if (!res.ok) throw new Error(`Spot fetch failed (${url}): ${res.status} ${res.statusText}`);
   const data = await res.json();
-
-  // Common patterns you might see: data.price, data.rate, data.ask, etc.
-  // You will likely need to tweak this once you confirm the provider’s exact JSON shape.
-  const perOzt = data.price ?? data.rate ?? data.ask ?? data.value;
-  if (typeof perOzt !== "number") {
-    throw new Error("Unexpected JSON shape from price API. Update fetchSpot() parser.");
+  if (typeof data.price !== "number") {
+    throw new Error(`Unexpected spot response (${url}): ${JSON.stringify(data).slice(0,200)}`);
   }
-  return perOzt;
+  return data.price;
 }
+
 
 async function loadCoins() {
   const res = await fetch("./coins.json", { cache: "no-store" });
@@ -101,4 +99,7 @@ async function main() {
   await refreshPrices();
 }
 
-main().catch(err => alert(err.message));
+main().catch(err => {
+  console.error("MAIN ERROR:", err);
+  alert(`MAIN ERROR: ${err.message}`);
+});
